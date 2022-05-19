@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install pandoc
+    - name: Install pandoc & co
       run: |
         sudo apt-get update
-        sudo apt-get install -y pandoc
+        sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
     - name: Generate EPUB
       run: make epub
     - name: Generate PDF
