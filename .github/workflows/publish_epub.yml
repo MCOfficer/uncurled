@@ -3,7 +3,7 @@ name: Publish EPUB
 on:
   push:
     branches:
-      - master
+      - main
 
 
 jobs:
