@@ -1,0 +1,23 @@
+name: Publish EPUB
+
+on:
+  push:
+    branches:
+      - master
+
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Generate EPUB
+      run: make epub
+    - name: Generate PDF
+      run: make pdf
+    - uses: actions/upload-artifact@v3
+      with:
+        name: generated-files
+        path: |
+          uncurled.epub
+          uncurled.pdf
